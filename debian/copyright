@@ -1,0 +1,20 @@
+Source: http://svn.debian.org/viewsvn/collab-maint/deb-maint/ttcn-el/
+
+Files: forth.el
+Copyright: © 1995, 1996, 1997, 1998 Free Software Foundation, Inc.
+License: GPL-2
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; version 2.
+
+Files: *
+Copyright: © 2000, 2001, W. Martin Borgert <debacle@debian.org>
+License: GPL-3+
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 3 of the License, or
+ (at your option) any later version.
+
+The complete text of the forementioned licenses can be found in
+files "/usr/share/common-licenses/GPL-2" and
+"/usr/share/common-licenses/GPL-3", respectively.

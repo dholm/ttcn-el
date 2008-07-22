@@ -1,0 +1,38 @@
+#!/bin/sh -e
+# /usr/lib/emacsen-common/packages/install/ttcn-el
+
+# Written by Jim Van Zandt <jrv@vanzandt.mv.com>, borrowing heavily
+# from the install scripts for gettext by Santiago Vila
+# <sanvila@ctv.es> and octave by Dirk Eddelbuettel <edd@debian.org>.
+
+FLAVOUR=$1
+PACKAGE=ttcn-el
+
+if [ ${FLAVOUR} = emacs ]; then exit 0; fi
+
+echo install/${PACKAGE}: Handling install for emacsen flavour ${FLAVOUR}
+
+FLAVOURTEST=`echo $FLAVOUR | cut -c-6`
+if [ ${FLAVOURTEST} = xemacs ] ; then
+    SITEFLAG="-no-site-file"
+else
+    SITEFLAG="--no-site-file"
+fi
+FLAGS="${SITEFLAG} -q -batch -l path.el -f batch-byte-compile"
+
+ELDIR=/usr/share/emacs/site-lisp/${PACKAGE}
+ELCDIR=/usr/share/${FLAVOUR}/site-lisp/${PACKAGE}
+
+install -m 755 -d ${ELCDIR}
+cd ${ELDIR}
+FILES=`echo *.el`
+cp ${FILES} ${ELCDIR}
+cd ${ELCDIR}
+
+cat << EOF > path.el
+(setq load-path (cons "." load-path) byte-compile-warnings nil)
+EOF
+${FLAVOUR} ${FLAGS} ${FILES}
+rm -f *.el path.el
+
+exit 0

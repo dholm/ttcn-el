@@ -1,0 +1,32 @@
+;; -*-emacs-lisp-*-
+;;
+;; Emacs startup file for the Debian GNU/Linux ttcn-el package
+;;
+;; Originally contributed by Nils Naumann <naumann@unileoben.ac.at>
+;; Modified by Dirk Eddelbuettel <edd@debian.org>
+;; Adapted for dh-make by Jim Van Zandt <jrv@vanzandt.mv.com>
+
+;; The ttcn-el package follows the Debian/GNU Linux 'emacsen' policy
+;; and byte-compiles its elisp files for each 'emacs flavour'
+;; (emacs21, xemacs21...).  The compiled code is then
+;; installed in a subdirectory of the respective site-lisp directory.
+;; We have to add this to the load-path:
+(setq load-path (nconc load-path (list (concat "/usr/share/"
+					       (symbol-name flavor)
+					       "/site-lisp/ttcn-el"))))
+(autoload 'ttcn-3-mode  "ttcn3" "Mode to edit TTCN-3 files"            t)
+(setq auto-mode-alist
+      (cons '("\\.ttcn3?\\'" . ttcn-3-mode) auto-mode-alist))
+(autoload 'ttcn-mode    "ttcn"  "Mode to edit TTCN.MP files"           t)
+; If you do edit more ttcn.mp files than TeXs MetaPost files, please
+; add these two lines, uncommented, to your ~/.emacs:
+;(setq auto-mode-alist
+;      (cons '("\\.mp\\'" . ttcn-3-mode) auto-mode-alist))
+; or, for TTCN-2 files:
+;(setq auto-mode-alist
+;      (cons '("\\.mp\\'" . ttcn-mode) auto-mode-alist))
+(autoload 'forth-mode   "forth" "Mode to edit gforth files"            t)
+(autoload 'tm-functions "tm"    "Functions to edit Test Manager files" t)
+; If you want to edit Test Manager files, please uncomment the
+; following line, or add it to your ~/.emacs:
+;(add-hook 'forth-mode-hook 'tm-functions)

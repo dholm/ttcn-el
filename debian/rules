@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+
+DB2MAN=/usr/share/xml/docbook/stylesheet/nwalsh/manpages/docbook.xsl
+DB2HTML=/usr/share/xml/docbook/stylesheet/nwalsh/html/docbook.xsl
+
+DEB_INSTALL_INFO_ttcn-el=ttcn-el.info
+DEB_INSTALL_MANPAGES_ttcn-el=ttcn-el.7
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+common-build-indep::
+	xsltproc --nonet --novalid $(DB2MAN) ttcn-el.dbk
+	xsltproc --nonet --novalid $(DB2HTML) ttcn-bnf.dbk > ttcn-bnf.html
+	db2x_xsltproc --stylesheet texi ttcn-el.dbk | \
+	  db2x_texixml --info --to-stdout | \
+	  awk 'BEGIN { p=1 } \
+	    /START-INFO-DIR-ENTRY/ { print "INFO-DIR-SECTION Development\nSTART-INFO-DIR-ENTRY\n* TTCN-3 mode: (ttcn-el).\tGNU Emacs modes for protocol testing languages.";  p=0 } \
+	    /END-INFO-DIR-ENTRY/ { p=1 } \
+	    { if (p==1) print }' > ttcn-el.info
+
+clean::
+	rm -f ttcn-el.7 ttcn-el.info ttcn-bnf.html
+
+common-install-indep::
+	cp *.el `pwd`/debian/ttcn-el/usr/share/emacs/site-lisp/ttcn-el/
+	cp ttcn-bnf.html `pwd`/debian/ttcn-el/usr/share/ttcn-el/
+	cd `pwd`/debian/ttcn-el/usr/share/doc/ttcn-el/; \
+	    ln -sf ../../ttcn-el/ttcn-bnf.html .

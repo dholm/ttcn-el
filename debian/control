@@ -1,0 +1,26 @@
+Source: ttcn-el
+Section: editors
+Priority: optional
+Maintainer: W. Martin Borgert <debacle@debian.org>
+Uploaders: W. Martin Borgert <debacle@debian.org>, Michael Piefel <piefel@debian.org>
+Standards-Version: 3.8.0
+Build-Depends-Indep: debhelper, xsltproc, docbook-xsl, cdbs, docbook2x, mawk | awk
+Vcs-Browser: http://svn.debian.org/wsvn/collab-maint/deb-maint/ttcn-el/
+Vcs-Svn: svn://svn.debian.org/collab-maint/deb-maint/ttcn-el/
+Homepage: http://svn.debian.org/wsvn/collab-maint/deb-maint/ttcn-el/
+
+Package: ttcn-el
+Architecture: all
+Depends: emacs22 | emacs21 | xemacs21 | emacsen
+Conflicts: xemacs21-basesupport (<< 2003.11.13)
+Suggests: ttcn3parser, speedbar, w3m-el
+Description: GNU Emacs modes for TTCN-3/protocol testing languages
+ Different GNU Emacs editing modes for protocol testing languages:
+  ttcn-3-mode  -- for editing in the TTCN-3 core language
+                  (Testing and Test Control Notation-3).
+  ttcn-mode    -- for editing in TTCN.MP
+                  (Tree and Tabular Combined Notation).
+  tm-functions -- for editing test manager (Forth) files.
+  forth-mode   -- for use with tm-functions.
+ The forth-mode is derived from an older version of the one that comes
+ with the gforth package.

@@ -1,0 +1,10 @@
+#!/bin/sh -e
+# /usr/lib/emacsen-common/packages/remove/ttcn-el
+
+FLAVOUR=$1
+PACKAGE=ttcn-el
+
+if [ ${FLAVOUR} != emacs ]; then
+    echo remove/${PACKAGE}: purging byte-compiled files for ${FLAVOUR}
+    rm -rf /usr/share/${FLAVOUR}/site-lisp/${PACKAGE}
+fi

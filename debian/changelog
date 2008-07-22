@@ -1,0 +1,112 @@
+ttcn-el (0.6.9-1) unstable; urgency=low
+
+  * New (= old) maintainer, because team does not exist.
+  * New license, were applicable: GPL-3.
+
+ -- W. Martin Borgert <debacle@debian.org>  Tue, 22 Jul 2008 06:40:34 +0000
+
+ttcn-el (0.6.8) unstable; urgency=low
+
+  * New maintainer:
+    Debian FDT tool team <pkg-fdt-tools-team@lists.alioth.debian.org>.
+    FDT = Formal Description Technique (e.g. ASN.1, MSC, SDL, TTCN-3)
+
+ -- W. Borgert <debacle@debian.org>  Thu, 04 Aug 2005 19:53:42 +0000
+
+ttcn-el (0.6.7) unstable; urgency=low
+
+  * ttcn3.el: Fixed default value of variable ttcn3-help-bnf-file.
+  * ttcn3.el: Support speedbar.
+  * ttcn3.el: Add missing keywords (names of builtin functions).
+
+ -- W. Borgert <debacle@debian.org>  Wed, 05 Jan 2005 11:43:14 +0000
+
+ttcn-el (0.6.6) unstable; urgency=low
+
+  * Lintian fix: Depends now mawk | awk.
+  * Moved BNF to /usr/share/ttcn-el/, needed by policy!
+
+ -- W. Borgert <debacle@debian.org>  Mon, 03 Jan 2005 14:50:57 +0000
+
+ttcn-el (0.6.5) unstable; urgency=low
+
+  * Lintian fixes.
+  * Add BNF online help using w3m-el.
+
+ -- W. Borgert <debacle@debian.org>  Thu, 16 Dec 2004 00:15:01 +0000
+
+ttcn-el (0.6.4) unstable; urgency=high
+
+  * Bug fix: "ttcn-el: can't fulfill the Recommends in sarge", thanks to
+    Adrian Bunk (Closes: #272855).
+  * Bug fix: "Half-broken dependency on emacs20", thanks to Martin
+    Michlmayr (Closes: #232797).
+
+ -- W. Borgert <debacle@debian.org>  Sat, 16 Oct 2004 19:16:04 +0000
+
+ttcn-el (0.6.3) unstable; urgency=low
+
+  * XEmacs follows GNU Emacs API with regexp-opt, so this had to be
+    changed (closes: #228525).
+  * Change debian/rules to use CDBS, change manual page from DocBook/SGML
+    to DocBook/XML.
+  * Removed the splash screen/logo.
+
+ -- W. Borgert <debacle@debian.org>  Wed, 21 Jan 2004 20:26:34 +0000
+
+ttcn-el (0.6.2) unstable; urgency=low
+
+  * Updated TTCN-3 keywords (2002-09) - thanks to Thomas Deiss
+    <thomas.deiss@nokia.com>
+
+ -- W. Borgert <debacle@debian.org>  Wed, 18 Sep 2002 22:32:18 +0000
+
+ttcn-el (0.6.1) unstable; urgency=low
+
+  * Corrected indentation in control file (closes: #116406).
+
+ -- W. Borgert <debacle@debian.org>  Sun, 28 Oct 2001 11:17:09 +0000
+
+ttcn-el (0.6) unstable; urgency=low
+
+  * Updated keywords in ttcn3.el to latest TTCN-3 recommendation
+    (2001-10).  Thanks to Csaba Koppany and Theofanis Vassiliou-Gioles.
+  * Introduced a horrible splash screen in ttcn-3-mode.
+
+ -- W. Borgert <debacle@debian.org>  Wed, 10 Oct 2001 00:30:07 +0000
+
+ttcn-el (0.5) unstable; urgency=low
+
+  * Small fixes in ttcn3.el.
+  * ttcn3-parse runs now either TTCN3Parser or ttthreeparser by default.
+  * Adjustments of keywords to latest draft (2000-11).
+
+ -- W. Borgert <debacle@debian.org>  Sat,  5 May 2001 20:47:49 +0000
+
+ttcn-el (0.4) unstable; urgency=low
+
+  * Fix an installation problem.
+  * New command ttcn3-parse, that runs an external TTCN3Parser (coming
+    to Debian soon!) on the current file.
+
+ -- W. Borgert <debacle@debian.org>  Fri,  2 Feb 2001 07:50:00 +0000
+
+ttcn-el (0.3) unstable; urgency=low
+
+  * ttcn3.el should now work with GNU Emacs 21.0 and XEmacs 21.1, too.
+  * Other small fixes...
+
+ -- W. Borgert <debacle@debian.org>  Wed, 31 Jan 2001 19:15:49 +0000
+
+ttcn-el (0.2) unstable; urgency=low
+
+  * Updated ttcn3.el to revision 5 of the TTCN-3 BNF.
+  * Changed tm.el from a major mode to a function library for forth mode.
+
+ -- W. Borgert <debacle@debian.org>  Fri, 28 Jul 2000 20:35:24 +0000
+
+ttcn-el (0.1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- W. Borgert <debacle@debian.org>  Fri, 31 Mar 2000 22:29:51 +0000
